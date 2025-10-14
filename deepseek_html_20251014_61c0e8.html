@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dony Burguer's - O Melhor Lanche da Cidade!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela de Carregamento -->
+    <div id="splash">
+        <!-- Imagem de placeholder - na prática seria o logo real -->
+        <div style="width: 200px; height: 200px; background: var(--primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 2rem; font-weight: bold;">DB</div>
+        <h1>Dony Burguer's</h1>
+        <span>O melhor lanche da cidade!</span>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div id="content">
+        <header>
+            Dony Burguer's
+            <nav>
+                <a href="#burgers">Burgers</a>
+                <a href="#bebidas">Bebidas</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </header>
+
+        <!-- Barra de busca e filtros -->
+        <div class="search-filter-container">
+            <input type="text" id="search-input" placeholder="Buscar produtos...">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="burgers">Burgers</button>
+                <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="burgers">Nossos Burgers</h2>
+        <section class="produtos" id="burgers-section">
+            <div class="produto" data-category="burgers">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Burger Clássico">
+                <h2>Burger Clássico</h2>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                    <span class="rating-count">(128)</span>
+                </div>
+                <p>Pão, carne 180g, queijo prato, alface, tomate e molho especial.</p>
+                <div class="preco">R$ 18,90</div>
+                <button onclick="addToCart('Burger Clássico', 18.90)">Adicionar ao pedido</button>
+            </div>
+            <div class="produto" data-category="burgers">
+                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Burger Bacon">
+                <h2>Burger Bacon</h2>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    <span class="rating-count">(95)</span>
+                </div>
+                <p>Pão, carne 180g, queijo cheddar, bacon crocante e maionese da casa.</p>
+                <div class="preco">R$ 22,50</div>
+                <button onclick="addToCart('Burger Bacon', 22.50)">Adicionar ao pedido</button>
+            </div>
+            <div class="produto" data-category="burgers">
+                <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Burger Vegetariano">
+                <h2>Burger Vegetariano</h2>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                    <span class="rating-count">(76)</span>
+                </div>
+                <p>Pão integral, hambúrguer de grão de bico, queijo, alface, tomate e molho veg.</p>
+                <div class="preco">R$ 19,90</div>
+                <button onclick="addToCart('Burger Vegetariano', 19.90)">Adicionar ao pedido</button>
+            </div>
+            <div class="produto" data-category="burgers">
+                <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Burger Duplo">
+                <h2>Burger Duplo</h2>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    <span class="rating-count">(142)</span>
+                </div>
+                <p>Dois hambúrgueres 180g, queijo cheddar, bacon, alface, cebola caramelizada e molho especial.</p>
+                <div class="preco">R$ 26,90</div>
+                <button onclick="addToCart('Burger Duplo', 26.90)">Adicionar ao pedido</button>
+            </div>
+        </section>
+
+        <h2 class="section-title" id="bebidas">Bebidas</h2>
+        <section class="produtos" id="bebidas-section">
+            <div class="produto" data-category="bebidas">
+                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Refrigerante">
+                <h2>Refrigerante</h2>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                    <span class="rating-count">(210)</span>
+                </div>
+                <p>Lata 350ml (Coca, Guaraná, Fanta, Sprite)</p>
+                <div class="preco">R$ 5,00</div>
+                <button onclick="addToCart('Refrigerante', 5.00)">Adicionar ao pedido</button>
+            </div>
+            <div class="produto" data-category="bebidas">
+                <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Suco Natural">
+                <h2>Suco Natural</h2>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    <span class="rating-count">(87)</span>
+                </div>
+                <p>Sabores: laranja, limão, acerola, abacaxi com hortelã.</p>
+                <div class="preco">R$ 7,50</div>
+                <button onclick="addToCart('Suco Natural', 7.50)">Adicionar ao pedido</button>
+            </div>
+            <div class="produto" data-category="bebidas">
+                <img src="https://images.unsplash.com/photo-1548839149-6e1f96b6e53e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Água Mineral">
+                <h2>Água Mineral</h2>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                    <span class="rating-count">(134)</span>
+                </div>
+                <p>500ml sem gás ou com gás.</p>
+                <div class="preco">R$ 3,50</div>
+                <button onclick="addToCart('Água Mineral', 3.50)">Adicionar ao pedido</button>
+            </div>
+            <div class="produto" data-category="bebidas">
+                <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Milkshake">
+                <h2>Milkshake</h2>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    <span class="rating-count">(118)</span>
+                </div>
+                <p>Sabores: chocolate, morango, baunilha. 400ml.</p>
+                <div class="preco">R$ 12,90</div>
+                <button onclick="addToCart('Milkshake', 12.90)">Adicionar ao pedido</button>
+            </div>
+        </section>
+
+        <h2 class="section-title" id="contato">Contato</h2>
+        <section class="contato-info">
+            <p><strong>Telefone:</strong> (11) 91234-5678</p>
+            <p><strong>Email:</strong> contato@donyburguer.com</p>
+            <p><strong>Endereço:</strong> Rua dos Lanches, 123 - Centro, SuaCidade</p>
+            <p><strong>Horário de funcionamento:</strong> Segunda a Sábado, 18h às 23h</p>
+            <p><strong>Delivery:</strong> Disponível através do iFood e WhatsApp</p>
+        </section>
+    </div>
+
+    <!-- Botão do Carrinho -->
+    <button id="cart-button">
+        🛒
+        <span id="cart-count">0</span>
+    </button>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal">
+        <div id="cart-content">
+            <button id="close-cart">&times;</button>
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Seu Pedido</h2>
+            <div id="cart-items">
+                <!-- Itens do carrinho serão inseridos aqui via JavaScript -->
+                <p style="text-align: center; padding: 20px; color: #777;">Seu carrinho está vazio</p>
+            </div>
+            <div id="cart-total">Total: R$ 0,00</div>
+            <button id="checkout-button">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Dony Burguer's - Todos os direitos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
